@@ -1,5 +1,5 @@
 import PocketBase from './node_modules/pocketbase/dist/pocketbase.es.mjs';
-import getResults from './apiStuff.js';
+import { getResults } from './apiStuff.js';
 
 const pb = new PocketBase('http://nc.kjorda.com:8090');
 
@@ -57,17 +57,16 @@ async function addOption(event) {
     const form = event.target; // Select the form element
     
     // Log the values (or process them as needed)
-    console.log('Destination:', destination);
-    console.log('Cost:', cost);
-    console.log('Description:', description);
-
+    console.log('Destination:', form.destination.value);
+    console.log('Cost:', form.cost.value);
+    console.log('Description:', form.description.value);
 
     // Query all participants with our group id
     const parts = await pb.collection('participants').getList(1, 500, {
-        filter: "code = '7TNG3'",
+        filter: `code = '${localStorage.getItem('groupid')}'`,
     });
 
-    console.log(parts);
+    getResults(parts.items);
 
     // // This result is what we want to get with the API
     // var result = getResults();

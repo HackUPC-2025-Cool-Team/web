@@ -1,3 +1,3 @@
-export function getResults() {
-
+export function getResults(participants) {
+    console.log(participants);
 }
