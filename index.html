@@ -77,15 +77,11 @@
         <!-- Carousel Start -->
         <div class="header-carousel">
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-                    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
-                </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
                         <img src="img/carousel-2.jpg" class="img-fluid w-100" alt="First slide"/>
                         <div class="carousel-caption">
-                            <div class="container py-4">
+                            <div class="container-xxl py-4">
                                 <div class="row g-5">
                                     <!--  fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;" -->
                                     <div class="col-lg-6">
@@ -156,41 +152,21 @@
                                                         </div>
                                                     </div>
                                                     
-                                                    <div class="col-12">
-                                                        <a href="#" class="text-start text-white d-block mb-2">Please specify the date range you're available in for vacation:</a>
+                                                    <a href="#" class="text-start text-white d-block mt-4">Please specify the date range you're available in for vacation:</a>
+                                                    <div class="col-6">
                                                         <div class="input-group">
                                                             <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
                                                                 <span class="fas fa-calendar-alt"></span><span class="ms-1">Start date</span>
                                                             </div>
                                                             <input class="form-control" type="date" name="start">
-                                                            <select class="form-select ms-3" aria-label="Default select example">
-                                                                <option selected>12:00AM</option>
-                                                                <option value="1">1:00AM</option>
-                                                                <option value="2">2:00AM</option>
-                                                                <option value="3">3:00AM</option>
-                                                                <option value="4">4:00AM</option>
-                                                                <option value="5">5:00AM</option>
-                                                                <option value="6">6:00AM</option>
-                                                                <option value="7">7:00AM</option>
-                                                            </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
+                                                    <div class="col-6">
                                                         <div class="input-group">
                                                             <div class="d-flex align-itemPick Ups-center bg-light text-body rounded-start p-2">
                                                                 <span class="fas fa-calendar-alt"></span><span class="ms-1">End date </span>
                                                             </div>
                                                             <input class="form-control" type="date" name="end">
-                                                            <select class="form-select ms-3" aria-label="Default select example">
-                                                                <option selected>12:00AM</option>
-                                                                <option value="1">1:00AM</option>
-                                                                <option value="2">2:00AM</option>
-                                                                <option value="3">3:00AM</option>
-                                                                <option value="4">4:00AM</option>
-                                                                <option value="5">5:00AM</option>
-                                                                <option value="6">6:00AM</option>
-                                                                <option value="7">7:00AM</option>
-                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
@@ -199,70 +175,6 @@
                                                 </div>
                                             </form>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/carousel-1.jpg" class="img-fluid w-100" alt="First slide"/>
-                        <div class="carousel-caption">
-
-                            <div class="container py-4">
-                                <div class="bg-secondary rounded p-5">
-                                    <h4 class="text-white mb-4">Please add your own options and wait for your colleagues to add theirs too</h4>
-                                    <div class="row gx-5">
-                                        <!-- Add option form -->
-                                        <div class="col-3">
-                                            <div class="p-3 border bg-success rounded">
-                                                <h4 class="text-white mb-3">Add a new option</h4>
-                                                <form onsubmit="addOption(event)">
-                                                    <div class="mb-2">
-                                                        <input name="destination" class="form-control" type="text" placeholder="Destination IATA code"
-                                                            aria-label="Destination">
-                                                    </div>
-                                                    <div class="mb-2">
-                                                        <input name="cost" class="form-control" type="number" placeholder="Activity cost in USD"
-                                                            aria-label="Activity cost in USD">
-                                                    </div>
-                                                    <div class="mb-3">
-                                                        <textarea name="description" class="form-control" rows="8" placeholder="Activity description"
-                                                            aria-label="Activity description"></textarea>
-                                                    </div>
-                                                    <button class="btn btn-light w-100 py-2">Add</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- View option template -->
-                                        <div class="col-3">
-                                            <div class="p-3 border rounded">
-                                                <h4 class="text-white mb-3">[username]</h4>
-
-                                                <h6 class="text-white mb-3">Destination: BCN</h6>
-                                                <h6 class="text-white mb-3">Departure: Mon Feb 16, 7AM</h6>
-                                                <h6 class="text-white mb-3">Return: Mon Mar 12, 8PM</h6>
-                                                <h6 class="text-white mb-3">Activity cost: $34</h6>
-                                                <h6 class="text-white mb-3">Flight cost for you: $56</h6>
-                                                <h5 class="text-white ">Activity description</h4>
-                                                <p>We will go visit the sagrada familia, followed by a nice evening in the beach</p>
-
-                                                <input id="slider" type="range" name="valoracion" class="form-range w-75" min="0" max="10"
-                                step="0.1" value="5" oninput="updateRating(parseFloat(this.value))">
-
-                                                <div class="d-flex justify-content-around mt-2">
-                                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                                                        <label class="btn btn-outline-primary" for="btnradio1">Yes</label>
-                                                      
-                                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                                                        <label class="btn btn-outline-primary" for="btnradio2">No</label>
-                                                      </div>
-                                                    <button class="btn btn-light w-25 py-2">Vote</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -309,11 +221,9 @@
 
         const pb = new PocketBase('http://nc.kjorda.com:8090');
 
-
         const code = await pb.collection('code').create();
         document.getElementById('code').innerText = 'Your group code: '+code.id;
         localStorage.setItem('groupid', code.id);
-
     </script>
 
         
